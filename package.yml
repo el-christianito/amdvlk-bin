@@ -14,9 +14,6 @@ description: |
 builddeps  :
     - binutils
     - tar
-rundeps    :
-    - pkgconfig(vulkan)
-    - pkgconfig32(vulkan)
 setup      : |
     # Extract deb
     ar -xv $sources/*.deb

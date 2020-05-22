@@ -3,6 +3,7 @@ version    : 2020.2.2
 release    : 1
 source     :
     - https://github.com/GPUOpen-Drivers/AMDVLK/releases/download/v-2020.Q2.2/amdvlk_2020.Q2.2_amd64.deb : c1966f16b20abf229b741a662ccb2569361896f704b7078f35b378f5bdf7fef9
+    - https://github.com/GPUOpen-Drivers/AMDVLK/archive/v-2020.Q2.2.tar.gz : e57b7805e97cc1a82ef9dba2ea79c4e559ee7e865a9e7a942fc2b52559625068
 license    :
     - MIT
 component  : xorg.display
@@ -17,7 +18,10 @@ builddeps  :
 setup      : |
     # Extract deb
     ar -xv $sources/*.deb
-    tar -xf data.tar.xz 
+    tar -xf data.tar.xz
+
+    # extract source archive
+    tar -xf $sources/v-2020.Q2.2.tar.gz
 install    : |
     install -m755 -d $installdir/%libdir%
     install -m755 -d $installdir/usr/share/vulkan/icd.d
@@ -25,7 +29,5 @@ install    : |
 
     install usr/lib/x86_64-linux-gnu/amdvlk64.so $installdir/%libdir%
     install usr/lib/x86_64-linux-gnu/spvgen.so $installdir/%libdir%
-    install $pkgfiles/json/Redhat/amd_icd64.json $installdir/usr/share/vulkan/icd.d/
-    install $pkgfiles/LICENSE.txt $installdir/usr/share/licenses/amdvlk/
-    
-    # sed -i "s#/lib64#/lib#g" $installdir/usr/share/vulkan/icd.d/amd_icd64.json
+    install AMDVLK-v-2020.Q2.2/json/Redhat/amd_icd64.json $installdir/usr/share/vulkan/icd.d/
+    install AMDVLK-v-2020.Q2.2/LICENSE.txt $installdir/usr/share/licenses/amdvlk/

@@ -1,9 +1,9 @@
 name       : amdvlk
-version    : 2020.2.3
-release    : 1
+version    : 2020.2.4
+release    : 2
 source     :
-    - https://github.com/GPUOpen-Drivers/AMDVLK/releases/download/v-2020.Q2.3/amdvlk_2020.Q2.3_amd64.deb : 59f90ad32f16e4335eb22a63ee68c0e87ea6705cf2e0021eea39a9666b6f60d0
-    - https://github.com/GPUOpen-Drivers/AMDVLK/archive/v-2020.Q2.3.tar.gz : 3c0bf95b11bb38fbc8aa3cf620c07117473ca8f99e0c1534db4fa5ae03b8a9ac
+    - https://github.com/GPUOpen-Drivers/AMDVLK/releases/download/v-2020.Q2.4/amdvlk_2020.Q2.4_amd64.deb : ab284e9cc96170df2ea54b28c2fad7d6395c49c6a1cdba7abc4c2c21201ac16a
+    - https://github.com/GPUOpen-Drivers/AMDVLK/archive/v-2020.Q2.4.tar.gz : 3ca0b3e10233a22bbb9d703d1bde7d24a9046790eb6828140311ae837cc01e1b
 license    :
     - MIT
 component  : xorg.display
@@ -21,7 +21,7 @@ setup      : |
     tar -xf data.tar.xz
 
     # extract source archive
-    tar -xf $sources/v-2020.Q2.3.tar.gz
+    tar -xf $sources/v-2020.Q2.4.tar.gz
 install    : |
     install -m755 -d $installdir/%libdir%
     install -m755 -d $installdir/usr/share/vulkan/icd.d
@@ -29,5 +29,5 @@ install    : |
 
     install usr/lib/x86_64-linux-gnu/amdvlk64.so $installdir/%libdir%
     install usr/lib/x86_64-linux-gnu/spvgen.so $installdir/%libdir%
-    install AMDVLK-v-2020.Q2.3/json/Redhat/amd_icd64.json $installdir/usr/share/vulkan/icd.d/
-    install AMDVLK-v-2020.Q2.3/LICENSE.txt $installdir/usr/share/licenses/amdvlk/
+    install AMDVLK-v-2020.Q2.4/json/Redhat/amd_icd64.json $installdir/usr/share/vulkan/icd.d/
+    install AMDVLK-v-2020.Q2.4/LICENSE.txt $installdir/usr/share/licenses/amdvlk/

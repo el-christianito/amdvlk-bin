@@ -26,9 +26,9 @@
         </Files>
     </Package>
     <History>
-        <Update release="3">
+        <Update release="4">
             <Date>2020-07-07</Date>
-            <Version>2020.2.5</Version>
+            <Version>2020.2.6</Version>
             <Comment>Packaging update</Comment>
             <Name>El Christianito</Name>
             <Email>el-christianito@mail.ch</Email>
